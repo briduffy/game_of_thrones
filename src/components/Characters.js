@@ -5,8 +5,6 @@ import {
   Header,
   Container,
   Card,
-  Button,
-  Icon,
   Image,
 } from 'semantic-ui-react'
 
@@ -20,13 +18,12 @@ class Characters extends React.Component {
       })
   }
 
-  render(){
-    return(
-      <Container>
-        <Card.Group itemsPerRow={3}>
-          {this.state.characters.map( (characters, c) =>
+  characters() {
+    return this.state.characters.map( (characters, c) => {
+      if (characters.imageLink) {
+        return (
           <Card key={c}>
-            <Image src={characters.imageLink}/>
+            <Image src={`https://api.got.show${characters.imageLink}`}/>
             <Card.Content>
               <Card.Header textAlign='centered'>
                 {characters.name}
@@ -48,11 +45,19 @@ class Characters extends React.Component {
               </Card.Description>
             </Card.Content>
           </Card>
-          )}
+        )
+      }
+    })
+  }
+  render() {
+    return(
+      <Container>
+        <Header as='h1' textAlign='center'>Game of Thrones Characters</Header>
+        <Card.Group itemsPerRow={4}>
+          {this.characters()}
         </Card.Group>
       </Container>
     )
   }
 }
-
 export default connect()(Characters)
