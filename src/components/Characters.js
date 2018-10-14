@@ -56,6 +56,7 @@ class Characters extends React.Component {
       }
     })
   }
+
   render() {
     return(
       <div>
@@ -70,4 +71,5 @@ class Characters extends React.Component {
     )
   }
 }
+
 export default connect()(Characters)
