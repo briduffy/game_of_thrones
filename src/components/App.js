@@ -7,10 +7,17 @@ import Characters from './Characters'
 import { Switch, Route } from 'react-router-dom';
 import { Segment } from 'semantic-ui-react';
 
+const styles = {
+  background: {
+    backgroundColor: '#F5F5F5',
+    backgroundSize: 'cover'
+  },
+}
+
 class App extends Component {
   render() {
     return (
-      <Segment basic>
+      <Segment style={styles.background}>
         <NavBar />
         <Flash />
           <Switch>
