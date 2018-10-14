@@ -2,17 +2,15 @@ import React, { Component } from 'react';
 import {
   Button,
   Icon,
-  Container, 
 } from 'semantic-ui-react';
 
 class Home extends Component {
   render() {
     return (
-     <Container>
-       <Button
+      <Button
           fluid
           animated='vertical'
-          color='teal'
+          color='blue'
           size='big'
           href={'/characters'}
           rel="noopener norefferer"
@@ -21,8 +19,7 @@ class Home extends Component {
         <Button.Content hidden>
           <Icon name='arrow right'/>
         </Button.Content>
-        </Button>
-     </Container>
+      </Button>
     );
   }
 }
