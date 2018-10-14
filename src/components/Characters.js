@@ -58,12 +58,15 @@ class Characters extends React.Component {
   }
   render() {
     return(
-      <Container>
-        <Header color='blue' as='h1' textAlign='center'>Game of Thrones Characters</Header>
-        <Card.Group itemsPerRow={4}>
-          {this.characters()}
-        </Card.Group>
-      </Container>
+      <div>
+        <Divider hidden />
+        <Container>
+          <Header color='blue' as='h1' textAlign='center'>Game of Thrones Characters</Header>
+          <Card.Group itemsPerRow={4}>
+            {this.characters()}
+          </Card.Group>
+        </Container>
+      </div>
     )
   }
 }
